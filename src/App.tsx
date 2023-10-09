@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Target from './Components/Target';
+import IncomeSource from './Components/IncomeSource';
+import ExpenceSource from './Components/ExpenseSource';
+import SavingsAccount from './Components/SavingsAccount';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <div className='Conain-Forms'>
+     < IncomeSource/>
+     <ExpenceSource />
+     <Target/>
+      </div>
+    <div>
+      < SavingsAccount/>
+      </div>
+    
+      
+       </>
   );
 }
 
