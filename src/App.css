@@ -1,3 +1,4 @@
+
 .Formes{
   display:flex;
   padding:30px;
@@ -15,7 +16,15 @@
 
 }
 button{
- color:white;
+ color:gray;
  border-radius:4px;
  border:solid;
+}
+li{
+  background-color:bisque;
+  margin:12px;
+}
+progress{
+  background-color:gray;
+  color:black;
 }
