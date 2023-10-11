@@ -1,26 +1,53 @@
-import React from "react";
+// import { type } from "os";
+import {useState , ChangeEvent , FormEvent } from 'react';
+import { EventHandler } from 'react';
+import { typesF } from './TypesF';
 
 
-const IncomeSource = () => {
+const IncomeForm = () => {
+const [inCome ,setInCome]= useState <typesF>({
+  source : '',
+  amount: 0 ,
+  date: '' ,
+
+});
+ const[inComes , setInComes]=useState<typesF[]>([])
+
+const handelChange =(event :ChangeEvent<HTMLInputElement>) => {
+ const {name , value } = event.target;
+ setInCome((prevInCome) => {
+  return { ... prevInCome , [name]:value};
+ });
+};
+
+  const handelSubmit = (event : FormEvent) => {
+    event.preventDefault();
+    setInComes((prevIncomes) => {
+      return [... prevIncomes , inCome];
+     });
+  }
     return (
         <div>
-          <form>
+          <form onSubmit={handelSubmit} >
             <div>
               <label htmlFor="amount">Income Source</label><br/>
-              <input type="number" name="amount" id="amount" /><br/>
+              <input type="text" name="source" id="source" value={inCome.source} onChange={handelChange}/><br/>
               <label htmlFor="amount">Amount Of Income</label><br/>
-              <input type="number" name="amount" id="amount" /><br/>
+              <input type="number" name="amount" id="amount" value={inCome.amount} onChange={handelChange} /><br/>
               <label htmlFor="amount">Income Date</label><br/>
-              <input type="date" name="date" id="date" /><br/>
-            </div>
-            <button>Add Income</button>
+              <input type="date" name="date" id="date" value={inCome.date} onChange={handelChange} /><br/>
+            <button  >Add Income</button>
+              </div>
           </form>
          <ul>
-            <li>Salary on oct :4000</li>
-           <li>Salary on sep :4000</li>
-         </ul>
+          {inComes.map((inCome , index)=>(
+          <li key={index}>
+               {inCome.source}: {inCome.amount} EUR :{inCome.date}</li>
+         
+         ))}
+         </ul>    
         </div>
 );
 };
 
-export default IncomeSource;
+export default IncomeForm;

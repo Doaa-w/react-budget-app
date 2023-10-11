@@ -1,20 +1,32 @@
 import React from "react";
+import {useState , ChangeEvent , FormEvent } from 'react';
 
-const Target = () => {
+const savingTarget = () => {
+  const [target , setTarget] = useState(0);
+
+  const handelChange =(event :ChangeEvent<HTMLInputElement>) => { 
+  setTarget (Number(event.target.value));
+  };
+
+  const handelSubmit = (event : FormEvent) => {
+    event.preventDefault();
+    setTarget (0);
+
+  }
+
+
     return (
         <div>
-          <form>
-            <div>
+          <form onSubmit={handelSubmit}>
               <label htmlFor="amount">Set target</label><br/>
-              <input type="number" name="amount" id="amount" />
-            </div>
+              <input type="number" name="amount" id="amount" value={target} onChange={handelChange}/>
             <button>Reset</button>
           </form>
-          <p> Saving: 100</p>
-          <p>Target:2000</p>
-          <progress max="2000" value={100}/>
+          <p> Saving: "Transfer"</p>
+          <p>Target:{target}</p><br/>
+          <progress max="5000" value={target}/>
         </div>
 );
 };
 
-export default Target;
+export default savingTarget;
