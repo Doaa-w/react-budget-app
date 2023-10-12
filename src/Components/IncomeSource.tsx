@@ -1,6 +1,5 @@
 // import { type } from "os";
 import {useState , ChangeEvent , FormEvent } from 'react';
-import { EventHandler } from 'react';
 import { typesF } from './TypesF';
 
 
@@ -36,7 +35,9 @@ const handelChange =(event :ChangeEvent<HTMLInputElement>) => {
               <input type="number" name="amount" id="amount" value={inCome.amount} onChange={handelChange} /><br/>
               <label htmlFor="amount">Income Date</label><br/>
               <input type="date" name="date" id="date" value={inCome.date} onChange={handelChange} /><br/>
-            <button  >Add Income</button>
+            <button  >Add Income </button>
+            
+            
               </div>
           </form>
          <ul>
