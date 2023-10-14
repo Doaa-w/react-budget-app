@@ -1,7 +1,5 @@
 import {useState , ChangeEvent , FormEvent } from 'react';
 import { typesForms } from './TypesF';
-import ReactDOM from 'react-dom/client';
-import {BrowserRouter , Routes , Route, Link} from 'react-router-dom';
 
 
 const IncomeForm = () => {
