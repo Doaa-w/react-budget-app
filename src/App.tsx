@@ -1,11 +1,7 @@
 import React from 'react';
 import './App.css';
 import {useState} from 'react';
-import ExpenceSource from './Components/ExpenseSource';
-import SavingsAccount from './Components/SavingsAccount';
-import Target from './Components/Target';
-import InComeSource from './Components/InComeSource';
-
+import { InComeSource, ExpenceSource , Target , SavingsAccount } from './Components/importes';
 
 
 const App = () => {
