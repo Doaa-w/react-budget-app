@@ -5,8 +5,7 @@ import ExpenceSource from './Components/ExpenseSource';
 import SavingsAccount from './Components/SavingsAccount';
 import Target from './Components/Target';
 import InComeSource from './Components/InComeSource';
-import ReactDOM from 'react-dom/client';
-import {BrowserRouter , Routes , Route, Link} from 'react-router-dom';
+
 
 
 const App = () => {

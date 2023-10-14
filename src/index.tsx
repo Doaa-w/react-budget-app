@@ -8,9 +8,9 @@ import {BrowserRouter , Routes , Route, Link} from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <div>
-<BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App/>}></Route>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<App/>}></Route>
         </Routes>
         </BrowserRouter>
   </div>,
