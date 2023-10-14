@@ -1,4 +1,3 @@
-import { type } from "os";
 import App from "../App";
 import {useState , ChangeEvent , FormEvent } from 'react';
 
@@ -24,11 +23,10 @@ const SavingsAccount = (props:getSavingtype) => {
     return (
         <div>
          <form onSubmit={handelSubmit}>
-        <p> Current Balance :  </p> <br/>
-        
         <label htmlFor="amount">Transfer To Saving Account </label><br/>
         <input type="text" name="inputTransfer" id="inputTransferId" onChange={handelChange}/>
         <button name="transferBtnName" id="transferBtnId"> Transfer </button>
+        <p> Current Balance :  </p> 
          </form>
          </div>  
   );

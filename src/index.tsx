@@ -2,10 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import form1 from './Components/Target'
+import {BrowserRouter , Routes , Route, Link} from 'react-router-dom';
+
+
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <>
-    <App/>
-  </>,
+  <div>
+<BrowserRouter>
+      <Routes>
+        <Route path='/' element={<App/>}></Route>
+        </Routes>
+        </BrowserRouter>
+  </div>,
 )

@@ -1,16 +1,18 @@
-// import { type } from "os";
 import {useState , ChangeEvent , FormEvent } from 'react';
-import { typesF } from './TypesF';
+import { typesForms } from './TypesF';
+import ReactDOM from 'react-dom/client';
+import {BrowserRouter , Routes , Route, Link} from 'react-router-dom';
 
 
 const IncomeForm = () => {
-const [inCome ,setInCome]= useState <typesF>({
+
+const [inCome ,setInCome]= useState <typesForms>({
   source : '',
   amount: 0 ,
   date: '' ,
 
 });
- const[inComes , setInComes]=useState<typesF[]>([])
+ const[inComes , setInComes]=useState<typesForms[]>([])
 
 const handelChange =(event :ChangeEvent<HTMLInputElement>) => {
  const {name , value } = event.target;
@@ -26,7 +28,7 @@ const handelChange =(event :ChangeEvent<HTMLInputElement>) => {
      });
   }
     return (
-        <div>
+        <div> 
           <form onSubmit={handelSubmit} >
             <div>
               <label htmlFor="amount">Income Source</label><br/>

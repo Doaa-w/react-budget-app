@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import Target from './Components/Target';
 import {useState} from 'react';
 import ExpenceSource from './Components/ExpenseSource';
 import SavingsAccount from './Components/SavingsAccount';
+import Target from './Components/Target';
 import InComeSource from './Components/InComeSource';
+import ReactDOM from 'react-dom/client';
+import {BrowserRouter , Routes , Route, Link} from 'react-router-dom';
 
 
 const App = () => {
@@ -17,18 +19,22 @@ const App = () => {
     setSaving(amount)
   }
   return (
-    <div>
-    <div className='Formes'>
-     < InComeSource/>
+    <div> 
+      
+      
+      <div className='Formes'>
+    
+     < InComeSource />
      <ExpenceSource />
      <Target Saving={saving} />
       </div>
-    <div id='Balance'>
-      < SavingsAccount  getSaving ={getSaving}/>
+        <div id='Balance'>
+           < SavingsAccount  getSaving ={getSaving}/>
+            </div>   
+           
       </div>
-    
-      
-       </div>
+   
+  
   );
 }
 

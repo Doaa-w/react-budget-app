@@ -28,7 +28,7 @@ const savingTarget = (props:savingTypes) => {
           
           <p> Saving: {props.Saving}"</p>
           <p>Target:{target}</p>
-          <p>progress is: {props.Saving/target*100} %</p>
+          <p>progress is: {((props.Saving/target||1)*100)} %</p>
           <progress max={target} value={props.Saving}/>
        </form> 
        </div>

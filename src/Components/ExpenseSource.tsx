@@ -1,16 +1,16 @@
-import { type } from "os";
+
 import {useState , ChangeEvent , FormEvent } from 'react';
-import { typesF } from './TypesF';
+import { typesForms } from './TypesF';
 
   
  const ExpenseForm = () => {
-const [expense ,setExpense]= useState<typesF> ({
+ const [expense ,setExpense]= useState<typesForms> ({
   source : '',
   amount: 0 ,
   date: '' ,
 
 });
- const[expenses , setExpenses]=useState<typesF[]>([])
+ const[expenses , setExpenses]=useState<typesForms[]>([])
 
 const handelChange =(event :ChangeEvent<HTMLInputElement>) => {
  const {name , value } = event.target;

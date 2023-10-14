@@ -1,5 +1,5 @@
 
-export type  typesF = {
+export type  typesForms = {
     source: string ;
       amount: number ;
       date: string ;
