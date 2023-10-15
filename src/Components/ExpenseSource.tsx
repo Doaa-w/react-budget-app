@@ -1,16 +1,16 @@
 
 import {useState , ChangeEvent , FormEvent } from 'react';
-import { typesForms } from './TypesF';
+import { TypesForms } from './TypesF';
 
   
- const ExpenseForm = () => {
- const [expense ,setExpense]= useState<typesForms> ({
+ const ExpenseForm =()  => {
+ const [expense ,setExpense]= useState<TypesForms> ({
   source : '',
   amount: 0 ,
   date: '' ,
 
 });
- const[expenses , setExpenses]=useState<typesForms[]>([])
+ const[expenses , setExpenses]=useState<TypesForms[]>([])
 
 const handelChange =(event :ChangeEvent<HTMLInputElement>) => {
  const {name , value } = event.target;
@@ -22,6 +22,7 @@ const handelChange =(event :ChangeEvent<HTMLInputElement>) => {
 
   const handelSubmit = (event : FormEvent) => {
     event.preventDefault();
+   
     setExpenses((prevExpenses) => {
       return [... prevExpenses , expense];
      });

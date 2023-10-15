@@ -1,28 +1,29 @@
 import {useState , ChangeEvent , FormEvent } from 'react';
-import { typesForms } from './TypesF';
+import { TypesForms } from './TypesF';
 
 
 const IncomeForm = () => {
+ 
 
-const [inCome ,setInCome]= useState <typesForms>({
+const [income ,setIncome]= useState <TypesForms>({
   source : '',
   amount: 0 ,
   date: '' ,
 
 });
- const[inComes , setInComes]=useState<typesForms[]>([])
+ const[incomes , setIncomes]=useState<TypesForms[]>([])
 
 const handelChange =(event :ChangeEvent<HTMLInputElement>) => {
  const {name , value } = event.target;
- setInCome((prevInCome) => {
-  return { ... prevInCome , [name]:value};
+ setIncome((prevIncome) => {
+  return { ... prevIncome , [name]:value};
  });
 };
 
   const handelSubmit = (event : FormEvent) => {
     event.preventDefault();
-    setInComes((prevIncomes) => {
-      return [... prevIncomes , inCome];
+    setIncomes((prevIncomes) => {
+      return [... prevIncomes , income];
      });
   }
     return (
@@ -30,20 +31,20 @@ const handelChange =(event :ChangeEvent<HTMLInputElement>) => {
           <form onSubmit={handelSubmit} >
             <div>
               <label htmlFor="amount">Income Source</label><br/>
-              <input type="text" name="source" id="source" value={inCome.source} onChange={handelChange}/><br/>
+              <input type="text" name="source" id="source" value={income.source} onChange={handelChange}/><br/>
               <label htmlFor="amount">Amount Of Income</label><br/>
-              <input type="number" name="amount" id="amount" value={inCome.amount} onChange={handelChange} /><br/>
+              <input type="number" name="amount" id="amount" value={income.amount} onChange={handelChange} /><br/>
               <label htmlFor="amount">Income Date</label><br/>
-              <input type="date" name="date" id="date" value={inCome.date} onChange={handelChange} /><br/>
+              <input type="date" name="date" id="date" value={income.date} onChange={handelChange} /><br/>
             <button  >Add Income </button>
             
             
               </div>
           </form>
          <ul>
-          {inComes.map((inCome , index)=>(
+          {incomes.map((income , index)=>(
           <li key={index}>
-               {inCome.source}: {inCome.amount} EUR :{inCome.date}</li>
+               {income.source}: {income.amount} EUR :{income.date}</li>
          
          ))}
          </ul>    

@@ -8,6 +8,7 @@ const App = () => {
   
   //lifting state here
 
+
   const [saving , setSaving ]=useState(0)
 
   const getSaving = (amount : number )=>{
@@ -24,7 +25,7 @@ const App = () => {
      <Target Saving={saving} />
       </div>
         <div id='Balance'>
-           < SavingsAccount  getSaving ={getSaving}/>
+           < SavingsAccount  getSaving ={getSaving}  />
             </div>   
            
       </div>
